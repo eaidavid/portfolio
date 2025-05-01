@@ -424,8 +424,6 @@ function openProjectModal(projectId) {
           </div>
         </div>
         <div class="modal-project-actions">
-          <a href="#" class="btn btn-primary">
-            <i class="fas fa-external-link-alt"></i>
             <span>${translations[currentLang]['visit-site']}</span>
           </a>
         </div>
