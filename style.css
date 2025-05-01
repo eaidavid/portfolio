@@ -35,6 +35,33 @@ h1 {
   line-height: 1.1;
 }
 
+#cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+.cursor-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 123, 255, 0.7); /* Azul Neon */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
+  animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
