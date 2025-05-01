@@ -365,5 +365,23 @@ function addScrollProgressIndicator() {
   });
 }
 
+<script>
+  const trail = document.getElementById('cursor-trail');
+
+  window.addEventListener('mousemove', (e) => {
+    const particle = document.createElement('div');
+    particle.className = 'cursor-particle';
+    particle.style.left = `${e.clientX}px`;
+    particle.style.top = `${e.clientY}px`;
+
+    trail.appendChild(particle);
+
+    setTimeout(() => {
+      particle.remove();
+    }, 800); // Mesmo tempo da animação
+  });
+</script>
+
+
 // Initialize scroll progress indicator
 addScrollProgressIndicator();
