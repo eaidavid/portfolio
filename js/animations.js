@@ -365,7 +365,7 @@ function addScrollProgressIndicator() {
   });
 }
 
-<script>
+
   const trail = document.getElementById('cursor-trail');
 
   window.addEventListener('mousemove', (e) => {
@@ -380,7 +380,7 @@ function addScrollProgressIndicator() {
       particle.remove();
     }, 800); // Mesmo tempo da animação
   });
-</script>
+
 
 
 // Initialize scroll progress indicator
