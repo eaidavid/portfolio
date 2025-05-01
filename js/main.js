@@ -418,15 +418,12 @@ function openProjectModal(projectId) {
           ${project.fullDescription}
         </div>
         <div class="modal-project-tech">
-          <h4>${translations[currentLang]['technologies']}:</h4>
+          <h4>${translations[currentLang]['technologies']}:</h4> <br>
           <div class="tech-tags">
             ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
           </div>
         </div>
-        <div class="modal-project-actions">
-            <span>${translations[currentLang]['visit-site']}</span>
-          </a>
-        </div>
+    
       </div>
     `;
     
