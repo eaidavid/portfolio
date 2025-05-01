@@ -69,7 +69,7 @@ const translations = {
     // Modal
     'close': 'Fechar',
     'view-project': 'Ver Projeto',
-    'visit-site': 'Visitar Site',
+    //'visit-site': 'Visitar Site',
     'technologies': 'Tecnologias',
     
     // Toast
