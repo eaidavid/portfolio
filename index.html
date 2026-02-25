@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Portfólio de David Alves, desenvolvedor fullstack focado em criar experiências digitais modernas e eficientes.">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <meta name="description"
+    content="Portfólio de David Alves, desenvolvedor fullstack focado em criar experiências digitais modernas e eficientes.">
 </head>
+
 <body class="dark-theme">
   <div class="page-wrapper">
     <!-- Background Elements -->
@@ -20,7 +24,7 @@
       <div class="code-background"></div>
       <div class="gradient-overlay"></div>
     </div>
- 
+
 
     <!-- Header -->
     <header class="header">
@@ -43,8 +47,10 @@
             <i class="fas fa-sun"></i>
           </button>
           <div class="language-toggle">
-            <button class="lang-btn active" data-lang="pt-BR"><img src="assets/img/brazil-.png" alt="Português (Brasil)" width="24" height="24"</button>
-            <button class="lang-btn" data-lang="en-US"><img src="assets/img/usa.png" alt="Inglês (EUA)" width="24" height="24"</button>
+            <button class="lang-btn active" type="button" data-lang="pt-BR"><img src="assets/img/brazil-.png"
+                alt="Português (Brasil)" width="24" height="24"></button>
+            <button class="lang-btn" type="button" data-lang="en-US"><img src="assets/img/usa.png" alt="Inglês (EUA)"
+                width="24" height="24"></button>
           </div>
           <button class="mobile-menu-toggle" aria-label="Menu">
             <span></span>
@@ -75,37 +81,58 @@
         <div class="container">
           <div class="hero-content">
             <div class="hero-text">
+              <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span>Disponível para projetos e freelas</span>
+              </div>
               <span class="greeting" data-key="greeting">Olá, eu sou</span>
               <h1 class="hero-name">David Alves<span class="cursor">_</span></h1>
               <div class="hero-title">
                 <span class="typed-text" data-key="developer-title">Desenvolvedor Fullstack</span>
               </div>
-              <p class="hero-description" data-key="hero-description">
-                Transformando ideias em soluções digitais modernas e eficientes. Apaixonado por código limpo e experiências de usuário intuitivas.
-              </p>
+              <!-- <p class="hero-description" data-key="hero-description">
+                Se você já clicou em um botão e nada aconteceu, sinto informar: alguém falhou com você. Sou desenvolvedor fullstack e garanto que meus botões fazem exatamente o que prometem.
+              </p> -->
               <div class="hero-cta">
                 <a href="#portfolio" class="btn btn-primary" data-key="view-projects">Ver Projetos</a>
                 <a href="#contact" class="btn btn-outline" data-key="contact-me">Contato</a>
               </div>
+              <div class="hero-metrics" aria-label="Indicadores de trabalho">
+                <div class="metric-card">
+                  <span class="metric-value">UI + Code</span>
+                  <span class="metric-label">Design com foco em conversão</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value">Performance</span>
+                  <span class="metric-label">Interfaces rápidas e fluidas</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value">Entrega</span>
+                  <span class="metric-label">Do layout ao deploy</span>
+                </div>
+              </div>
             </div>
             <div class="hero-image">
               <div class="profile-image-container">
-                <img src="assets/img/foto-perfil.jpg" alt="David Alves" class="profile-image">
+                <img src="assets/img/foto-perfil.png" alt="David Alves" class="profile-image">
                 <div class="image-decoration">
                   <div class="deco-circle"></div>
                   <div class="deco-square"></div>
                   <div class="deco-line"></div>
+                  <div class="deco-glow"></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="scroll-indicator">
+          <div class="scroll-indicator" role="button" tabindex="0" aria-label="Descer para a secao Sobre">
             <div class="mouse">
               <div class="wheel"></div>
             </div>
-            <div>
+            <div class="scroll-copy">
               <span class="scroll-text" data-key="scroll-down">Role para baixo</span>
+              <span class="scroll-subtext">Desca e veja stack, projetos e contato</span>
             </div>
+            <span class="scroll-arrow" aria-hidden="true"><i class="fas fa-arrow-down"></i></span>
           </div>
         </div>
       </section>
@@ -119,12 +146,12 @@
           </div>
           <div class="about-content">
             <div class="about-image">
-              <img src="assets/img/foto-perfil.jpg" alt="David Alves" class="about-profile-image">
+              <img src="assets/img/foto-perfil.png" alt="David Alves" class="about-profile-image">
               <div class="about-image-decoration">
                 <div class="code-snippet">
                   <pre><code>{
   name: "David Alves",
-  age: 19,
+  age: 20,
   location: "Brasil",
   occupation: "Fullstack Dev"
 }</code></pre>
@@ -134,13 +161,17 @@
             <div class="about-text">
               <h3 class="about-greeting" data-key="about-greeting">Prazer em conhecê-lo!</h3>
               <p class="about-description" data-key="about-description-1">
-                Tenho 19 anos e sou um desenvolvedor fullstack apaixonado por criar aplicações web modernas e funcionais. Atualmente, estou cursando Análise e Desenvolvimento de Sistemas na Unileya.
+                Desenvolvo produtos web pensando no que vem depois do clique.
+                Não só em fazer funcionar, mas em fazer durar.
               </p>
               <p class="about-description" data-key="about-description-2">
-                Minha jornada na programação começou com uma curiosidade sobre como as coisas funcionam na web, e desde então venho aprimorando minhas habilidades em diferentes tecnologias e frameworks.
+                Minha jornada começou com aquela curiosidade de sempre: 'como isso funciona?'. Desde então, venho
+                dominando diferentes tecnologias e frameworks, e aprendendo que 'funciona na minha máquina' não é
+                argumento válido.
               </p>
               <p class="about-description" data-key="about-description-3">
-                Acredito que o código limpo e a atenção aos detalhes são fundamentais para criar experiências digitais excepcionais. Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades existentes.
+                Código limpo é economia de tempo, energia e dinheiro.
+                Entrego soluções claras, funcionais e pensadas para crescer junto com o produto.
               </p>
               <div class="about-info">
                 <div class="info-item">
@@ -149,7 +180,7 @@
                 </div>
                 <div class="info-item">
                   <span class="info-label" data-key="age-label">Idade:</span>
-                  <span class="info-value">19</span>
+                  <span class="info-value">20</span>
                 </div>
                 <div class="info-item">
                   <span class="info-label" data-key="education-label">Formação:</span>
@@ -218,12 +249,12 @@
                   </div>
                   <span class="skill-name">Node.js</span>
                 </div>
-                <div class="skill-item" data-skill="Express">
+                <!-- <div class="skill-item" data-skill="Express">
                   <div class="skill-icon">
                     <i class="fab fa-node"></i>
                   </div>
                   <span class="skill-name">Express</span>
-                </div>
+                </div> -->
                 <div class="skill-item" data-skill="MongoDB">
                   <div class="skill-icon">
                     <i class="fas fa-database"></i>
@@ -291,20 +322,18 @@
               <div class="portfolio-info">
                 <h3 class="portfolio-title" data-key="project1-title">Portfolio Joana Fotografia</h3>
                 <p class="portfolio-description" data-key="project1-description">
-                  Site elegante para uma fotógrafa de casamento, destacando seu trabalho com uma interface limpa e moderna.
+                  Site elegante para uma fotógrafa de casamento, destacando seu trabalho com uma interface limpa e
+                  moderna.
                 </p>
                 <div class="portfolio-tech">
                   <span class="tech-tag">HTML5</span>
-                  <span class="tech-tag">CSS3</span>
                   <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">Tailwind CSS</span>
-                  <span class="tech-tag">Vercel</span>
-                </div>
+                  <span class="tech-tag">Tailwind CSS</span>                </div>
               </div>
             </div>
             <div class="portfolio-item">
               <div class="portfolio-image">
-                <img src="assets/img/techhelp.png" alt="Sistema TechHelp" class="project-image">
+                <img src="assets/img/snitap.png" alt="LP Snitap" class="project-image">
                 <div class="portfolio-overlay">
                   <a href="#" class="portfolio-link" data-project="techhelp">
                     <i class="fas fa-eye"></i>
@@ -312,39 +341,35 @@
                 </div>
               </div>
               <div class="portfolio-info">
-                <h3 class="portfolio-title" data-key="project2-title">Sistema TechHelp</h3>
+                <h3 class="portfolio-title" data-key="project2-title">LP Snitap Patins</h3>
                 <p class="portfolio-description" data-key="project2-description">
-                  Sistema interno de automação para uma loja de reparo técnico, otimizando o fluxo de trabalho.
+                  Landing page moderna e responsiva para e-commerce de patins.
                 </p>
                 <div class="portfolio-tech">
                   <span class="tech-tag">HTML</span>
                   <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">PDF Generator</span>
-                  <span class="tech-tag">Database</span>
                 </div>
               </div>
             </div>
             <div class="portfolio-item">
               <div class="portfolio-image">
-                <img src="assets/img/mastertech.png" alt="Sistema de Estoque MasterTech" class="project-image">
+                <img src="assets/img/afiliadosBet.png" alt="Afiliados Bet" class="project-image">
                 <div class="portfolio-overlay">
-                  <a href="#" class="portfolio-link" data-project="mastertech">
+                  <a href="#" class="portfolio-link" data-project="afiliadosBet">
                     <i class="fas fa-eye"></i>
                   </a>
                 </div>
               </div>
               <div class="portfolio-info">
-                <h3 class="portfolio-title" data-key="project3-title">Sistema de Estoque MasterTech</h3>
+                <h3 class="portfolio-title" data-key="project3-title">LP AfiliadosBet</h3>
                 <p class="portfolio-description" data-key="project3-description">
-                  Sistema de gerenciamento de estoque com painel administrativo completo para controle de inventário.
+                  Uma landing page moderna e responsiva para programa de afiliados de apostas, construída com React,
+                  TypeScript e Tailwind CSS.
                 </p>
                 <div class="portfolio-tech">
-                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">JavaScript</span>
                   <span class="tech-tag">Tailwind</span>
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">Express</span>
-                  <span class="tech-tag">MongoDB</span>
                 </div>
               </div>
             </div>
@@ -368,7 +393,7 @@
                 <div class="contact-text">
                   <h3 class="contact-title" data-key="email-title">Email</h3>
                   <p class="contact-value">eaidavidalves@gmail.com</p>
-                  <button class="copy-btn" data-copy="eaidavidalves@gmail.com">
+                  <button class="copy-btn" type="button" data-copy="eaidavidalves@gmail.com">
                     <i class="fas fa-copy"></i>
                     <span data-key="copy">Copiar</span>
                   </button>
@@ -394,15 +419,21 @@
                 <div class="contact-text">
                   <h3 class="contact-title" data-key="whatsapp-title">WhatsApp</h3>
                   <p class="contact-value">(62) 99530-2425</p>
-                  <button class="copy-btn" data-copy="6299530-2425">
+                  <button class="copy-btn" type="button" data-copy="6299530-2425">
                     <i class="fas fa-copy"></i>
                     <span data-key="copy">Copiar</span>
                   </button>
                 </div>
               </div>
             </div>
-            </div> <br>
-              <a href="https://wa.me/5562995302425?text=Ol%C3%A1%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20desejo%20fazer%20um%20or%C3%A7amento.%0A%0AMeu%20nome%20%C3%A9%20" class="btn btn-primary" data-key="lets-talk">Fazer Orçamento</a>
+            <div class="contact-cta-panel">
+              <span class="contact-cta-kicker">Canal direto</span>
+              <h3 class="contact-cta-title">Quer uma landing page ou site com visual premium?</h3>
+              <p class="contact-cta-description">
+                Me chama no WhatsApp e eu te respondo com direcionamento, prazo e melhor formato para o seu projeto.
+              </p>
+              <a href="https://wa.me/5562995302425?text=Ol%C3%A1%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20desejo%20fazer%20um%20or%C3%A7amento.%0A%0AMeu%20nome%20%C3%A9%20"
+                class="btn btn-primary contact-main-cta" target="_blank" rel="noopener noreferrer">Fazer Orcamento</a>
             </div>
           </div>
         </div>
@@ -420,7 +451,8 @@
             <a href="https://github.com/eaidavid" target="_blank" rel="noopener noreferrer" class="social-link">
               <i class="fab fa-github"></i>
             </a>
-            <a href="http://linkedin.com/in/david-alves-477654225" target="_blank" rel="noopener noreferrer" class="social-link">
+            <a href="http://linkedin.com/in/david-alves-477654225" target="_blank" rel="noopener noreferrer"
+              class="social-link">
               <i class="fab fa-linkedin-in"></i>
             </a>
             <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="social-link">
@@ -428,7 +460,8 @@
             </a>
           </div>
           <div class="footer-copyright">
-            <p>&copy; <span class="current-year">2023</span> <span data-key="copyright">David Alves. Todos os direitos reservados.</span></p>
+            <p>&copy; <span class="current-year">2023</span> <span data-key="copyright">David Alves. Todos os direitos
+                reservados.</span></p>
           </div>
         </div>
       </div>
@@ -448,4 +481,5 @@
     <script src="js/animations.js"></script>
   </div>
 </body>
+
 </html>

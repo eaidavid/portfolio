@@ -98,7 +98,17 @@ function initApp() {
   
   // Navigation Links
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      const targetSelector = link.getAttribute('href');
+
+      if (targetSelector && targetSelector.startsWith('#')) {
+        const targetSection = document.querySelector(targetSelector);
+        if (targetSection) {
+          e.preventDefault();
+          smoothScrollToSection(targetSection);
+        }
+      }
+
       // Close mobile menu if open
       if (mobileMenu.classList.contains('active')) {
         mobileMenuToggle.classList.remove('active');
@@ -118,7 +128,19 @@ function initApp() {
   if (scrollIndicator) {
     scrollIndicator.addEventListener('click', () => {
       const aboutSection = document.getElementById('about');
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
+      if (aboutSection) {
+        smoothScrollToSection(aboutSection);
+      }
+    });
+
+    scrollIndicator.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          smoothScrollToSection(aboutSection);
+        }
+      }
     });
   }
   
@@ -288,6 +310,17 @@ function applyTranslations(lang) {
   document.documentElement.lang = lang;
 }
 
+function smoothScrollToSection(sectionElement) {
+  const header = document.querySelector('.header');
+  const headerOffset = header ? header.offsetHeight : 80;
+  const targetTop = sectionElement.getBoundingClientRect().top + window.scrollY - headerOffset - 8;
+
+  window.scrollTo({
+    top: Math.max(0, targetTop),
+    behavior: 'smooth'
+  });
+}
+
 // Copy to clipboard
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => {
@@ -368,21 +401,20 @@ function openProjectModal(projectId) {
       title: translations[currentLang]['project2-title'],
       description: translations[currentLang]['project2-description'],
       fullDescription: `
-        <p>Sistema interno para uma loja de reparo técnico, que permite gerenciar ordens de serviço, controlar estoque de peças e gerar relatórios automáticos.</p>
-        <p>Inclui funcionalidades como dashboard administrativo, sistema de notificação para clientes e geração de PDF para orçamentos.</p>
+        <p>Landing page moderna para o projeto Snitap Patins, com foco em apresentação visual, responsividade e conversão.</p>
+        <p>O layout foi construído para destacar produto, benefícios e CTA principal com navegação leve e uma experiência fluida em mobile.</p>
       `,
-      image: 'assets/img/techhelp.png',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'PDF Generator', 'Database']
+      image: 'assets/img/snitap.png',
+      technologies: ['HTML', 'CSS', 'Responsive Layout', 'UI Motion']
     },
-    'mastertech': {
+    'afiliadosBet': {
       title: translations[currentLang]['project3-title'],
       description: translations[currentLang]['project3-description'],
       fullDescription: `
-        <p>Sistema completo de gerenciamento de estoque com painel administrativo para controle de inventário, entradas, saídas e gestão de fornecedores.</p>
-        <p>Inclui recursos como autenticação de usuários, diferentes níveis de acesso, relatórios avançados e integrações com APIs externas.</p>
+        <p>Uma landing page moderna e responsiva para programa de afiliados de apostas, construída com React, TypeScript e Tailwind CSS.</p>
       `,
-      image: 'assets/img/mastertech.png',
-      technologies: ['React', 'Tailwind', 'Node.js', 'Express', 'MongoDB']
+      image: 'assets/img/afiliadosBet.png',
+      technologies: ['React', 'Tailwind', 'Vite', 'TypeScript', 'Javascript']
     }
   };
   
@@ -394,13 +426,13 @@ function openProjectModal(projectId) {
     `;
     
     projectData['techhelp'].fullDescription = `
-      <p>Internal system for a technical repair shop that allows managing service orders, controlling parts inventory, and generating automatic reports.</p>
-      <p>Includes features such as administrative dashboard, customer notification system, and PDF generation for quotes.</p>
+      <p>Modern landing page for the Snitap Skates project with a strong visual direction, responsive layout, and conversion-oriented structure.</p>
+      <p>The page highlights the product, benefits, and primary CTA with lightweight navigation and a smooth mobile experience.</p>
     `;
     
-    projectData['mastertech'].fullDescription = `
-      <p>Complete inventory management system with administrative panel for inventory control, inputs, outputs, and supplier management.</p>
-      <p>Includes features such as user authentication, different access levels, advanced reporting, and integrations with external APIs.</p>
+    projectData['afiliadosBet'].fullDescription = `
+      <p>A modern and responsive landing page for a betting affiliate program, built with React, TypeScript, and Tailwind CSS.</p>
+      <p>Designed to communicate the offer clearly and guide users toward conversion with a clean, direct interface.</p>
     `;
   }
   

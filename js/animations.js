@@ -1,3 +1,4 @@
+if (false) {
 // Animation Utilities
 const animationObserver = new IntersectionObserver(
   (entries) => {
@@ -385,3 +386,259 @@ function addScrollProgressIndicator() {
 
 // Initialize scroll progress indicator
 addScrollProgressIndicator();
+}
+
+let animationsInitialized = false;
+let revealObserver = null;
+
+function initAnimations() {
+  if (animationsInitialized) return;
+  animationsInitialized = true;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  setupHeroIntro(reducedMotion);
+  setupRevealOnScroll(reducedMotion);
+  setupScrollProgress();
+  setupAmbientParallax(reducedMotion);
+  setupHeroTilt(reducedMotion);
+}
+
+function setupHeroIntro(reducedMotion) {
+  const sequence = [
+    ['.hero-badge', 'reveal-up', 0],
+    ['.greeting', 'reveal-up', 70],
+    ['.hero-name', 'reveal-up', 120],
+    ['.hero-title', 'reveal-up', 190],
+    ['.hero-description', 'reveal-up', 260],
+    ['.hero-cta', 'reveal-up', 330],
+    ['.hero-metrics', 'reveal-up', 400],
+    ['.hero-image', 'reveal-scale', 200],
+    ['.scroll-indicator', 'reveal-up', 520]
+  ];
+
+  sequence.forEach(([selector, variantClass, delay]) => {
+    const element = document.querySelector(selector);
+    if (!element) return;
+
+    element.classList.add(variantClass, 'hero-intro-item');
+    element.style.setProperty('--reveal-delay', `${delay}ms`);
+
+    if (reducedMotion) {
+      element.classList.add('animated');
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        element.classList.add('animated');
+      });
+    });
+  });
+}
+
+function setupRevealOnScroll(reducedMotion) {
+  const groups = [
+    { selector: '.section-header', variant: 'reveal-up', stagger: 80 },
+    { selector: '.about-image', variant: 'reveal-left', stagger: 0 },
+    { selector: '.about-text', variant: 'reveal-right', stagger: 0 },
+    { selector: '.skills-category', variant: 'reveal-scale', stagger: 90 },
+    { selector: '.portfolio-item', variant: 'reveal-up', stagger: 90 },
+    { selector: '.contact-item', variant: 'reveal-up', stagger: 70 },
+    { selector: '.contact-cta-panel', variant: 'reveal-right', stagger: 0 },
+    { selector: '.footer-content > *', variant: 'reveal-up', stagger: 60 }
+  ];
+
+  const revealTargets = [];
+
+  groups.forEach(({ selector, variant, stagger }) => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      if (element.classList.contains('hero-intro-item')) return;
+
+      element.classList.add(variant);
+      element.style.setProperty('--reveal-delay', `${index * stagger}ms`);
+      revealTargets.push(element);
+    });
+  });
+
+  if (!revealTargets.length) return;
+
+  if (reducedMotion || !('IntersectionObserver' in window)) {
+    revealTargets.forEach(element => element.classList.add('animated'));
+    return;
+  }
+
+  revealObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('animated');
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: '0px 0px -8% 0px'
+    }
+  );
+
+  revealTargets.forEach(target => revealObserver.observe(target));
+}
+
+function setupScrollProgress() {
+  if (document.querySelector('.scroll-progress')) return;
+
+  if (!document.getElementById('scroll-progress-style')) {
+    const style = document.createElement('style');
+    style.id = 'scroll-progress-style';
+    style.textContent = `
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        transform-origin: 0 50%;
+        transform: scaleX(0);
+        background: linear-gradient(90deg, rgba(18,191,116,0.85), rgba(32,228,141,1));
+        box-shadow: 0 0 18px rgba(32,228,141,0.42);
+        z-index: 1200;
+        opacity: 0;
+        transition: opacity 160ms ease;
+        pointer-events: none;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  progressBar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(progressBar);
+
+  let ticking = false;
+
+  const updateProgress = () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
+
+    progressBar.style.transform = `scaleX(${progress})`;
+    progressBar.style.opacity = scrollTop > 12 ? '1' : '0';
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateProgress);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  updateProgress();
+}
+
+function setupAmbientParallax(reducedMotion) {
+  if (reducedMotion) return;
+
+  const codeBackground = document.querySelector('.code-background');
+  const gradientOverlay = document.querySelector('.gradient-overlay');
+  const heroSection = document.querySelector('.hero-section');
+  const heroPanel = document.querySelector('.hero-content');
+  const scrollIndicator = document.querySelector('.scroll-indicator');
+
+  if (!codeBackground && !gradientOverlay && !heroPanel) return;
+
+  let currentY = window.scrollY || 0;
+  let ticking = false;
+
+  const apply = () => {
+    const heroHeight = heroSection ? heroSection.offsetHeight || 1 : 1;
+    const heroRatio = heroSection ? Math.max(0, 1 - currentY / heroHeight) : 0;
+
+    if (codeBackground) {
+      codeBackground.style.transform = `translate3d(0, ${Math.round(currentY * 0.04)}px, 0)`;
+    }
+
+    if (gradientOverlay) {
+      gradientOverlay.style.transform = `translate3d(0, ${Math.round(currentY * 0.015)}px, 0) scale(1.015)`;
+    }
+
+    if (heroPanel) {
+      heroPanel.style.boxShadow = `
+        inset 0 1px 0 rgba(255,255,255,0.04),
+        0 ${Math.round(18 + heroRatio * 18)}px ${Math.round(48 + heroRatio * 26)}px rgba(0,0,0,0.28),
+        0 0 0 1px rgba(32,228,141,${(0.03 + heroRatio * 0.03).toFixed(3)})
+      `;
+    }
+
+    if (scrollIndicator) {
+      scrollIndicator.style.opacity = currentY > 90 ? '0.5' : '1';
+    }
+
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    currentY = window.scrollY || 0;
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(apply);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  apply();
+}
+
+function setupHeroTilt(reducedMotion) {
+  if (reducedMotion) return;
+
+  const heroImageArea = document.querySelector('.hero-image');
+  const imageCard = document.querySelector('.profile-image-container');
+  if (!heroImageArea || !imageCard) return;
+
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  let rafId = 0;
+
+  const render = () => {
+    currentX += (targetX - currentX) * 0.14;
+    currentY += (targetY - currentY) * 0.14;
+
+    imageCard.style.transform = `rotateX(${currentY.toFixed(2)}deg) rotateY(${currentX.toFixed(2)}deg) translateZ(0)`;
+
+    if (Math.abs(targetX - currentX) > 0.03 || Math.abs(targetY - currentY) > 0.03) {
+      rafId = requestAnimationFrame(render);
+      return;
+    }
+
+    rafId = 0;
+  };
+
+  const queueRender = () => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(render);
+  };
+
+  heroImageArea.addEventListener('pointermove', event => {
+    const rect = heroImageArea.getBoundingClientRect();
+    const px = (event.clientX - rect.left) / rect.width - 0.5;
+    const py = (event.clientY - rect.top) / rect.height - 0.5;
+
+    targetX = px * 8;
+    targetY = py * -8;
+    queueRender();
+  });
+
+  heroImageArea.addEventListener('pointerleave', () => {
+    targetX = 0;
+    targetY = 0;
+    queueRender();
+  });
+}
+
+window.initAnimations = initAnimations;

@@ -277,3 +277,62 @@
   opacity: 1;
   transition: opacity 0.3s ease 0.3s;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Premium reveal system (used by js/animations.js)                           */
+/* -------------------------------------------------------------------------- */
+
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition:
+    opacity 680ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 680ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-up {
+  transform: translate3d(0, 20px, 0);
+}
+
+.reveal-left {
+  transform: translate3d(-24px, 0, 0);
+}
+
+.reveal-right {
+  transform: translate3d(24px, 0, 0);
+}
+
+.reveal-scale {
+  transform: translate3d(0, 12px, 0) scale(0.965);
+}
+
+.animated.reveal-up,
+.animated.reveal-left,
+.animated.reveal-right,
+.animated.reveal-scale {
+  opacity: 1;
+  transform: none;
+}
+
+.hero-intro-item {
+  transition-duration: 780ms;
+}
+
+.hero-intro-item.reveal-scale {
+  transition-duration: 900ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
