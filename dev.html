@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David Alves | Desenvolvedor Fullstack</title>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: blob: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <meta name="description"
+    content="Portfólio de David Alves, desenvolvedor fullstack focado em criar experiências digitais modernas e eficientes.">
+</head>
+
+<body class="dark-theme glow-low">
+  <div class="page-wrapper">
+    <!-- Background Elements -->
+    <div class="background-elements">
+      <div class="code-background"></div>
+      <div class="particles" data-count="18" aria-hidden="true"></div>
+      <div class="gradient-overlay"></div>
+    </div>
+
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">
+          <span class="logo-text">DA<span class="accent">.</span></span>
+        </div>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="./" class="nav-link" data-key="links">Links</a></li>
+            <li><a href="design.html" class="nav-link" data-key="design">Design</a></li>
+            <li><a href="#home" class="nav-link active" data-key="home">Início</a></li>
+            <li><a href="#about" class="nav-link" data-key="about">Sobre</a></li>
+            <li><a href="#skills" class="nav-link" data-key="skills">Habilidades</a></li>
+            <li><a href="#portfolio" class="nav-link" data-key="portfolio">Projetos</a></li>
+            <li><a href="#contact" class="nav-link" data-key="contact">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="header-controls">
+          <button class="theme-toggle" aria-label="Alternar tema">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
+          <div class="language-toggle">
+            <button class="lang-btn active" type="button" data-lang="pt-BR"><img src="assets/img/brazil-.png"
+                alt="Português (Brasil)" width="24" height="24"></button>
+            <button class="lang-btn" type="button" data-lang="en-US"><img src="assets/img/usa.png" alt="Inglês (EUA)"
+                width="24" height="24"></button>
+          </div>
+          <button class="mobile-menu-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <nav class="mobile-nav">
+        <ul class="mobile-nav-list">
+          <li><a href="./" class="mobile-nav-link" data-key="links">Links</a></li>
+          <li><a href="design.html" class="mobile-nav-link" data-key="design">Design</a></li>
+          <li><a href="#home" class="mobile-nav-link" data-key="home">Início</a></li>
+          <li><a href="#about" class="mobile-nav-link" data-key="about">Sobre</a></li>
+          <li><a href="#skills" class="mobile-nav-link" data-key="skills">Habilidades</a></li>
+          <li><a href="#portfolio" class="mobile-nav-link" data-key="portfolio">Projetos</a></li>
+          <li><a href="#contact" class="mobile-nav-link" data-key="contact">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="section hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span>Disponível para projetos e freelas</span>
+              </div>
+              <span class="greeting" data-key="greeting">Olá, eu sou</span>
+              <h1 class="hero-name">David Alves<span class="cursor">_</span></h1>
+              <div class="hero-title">
+                <span class="typed-text" data-key="developer-title">Desenvolvedor Fullstack</span>
+              </div>
+              <!-- <p class="hero-description" data-key="hero-description">
+                Se você já clicou em um botão e nada aconteceu, sinto informar: alguém falhou com você. Sou desenvolvedor fullstack e garanto que meus botões fazem exatamente o que prometem.
+              </p> -->
+              <div class="hero-cta">
+                <a href="#portfolio" class="btn btn-primary" data-key="view-projects">Ver Projetos</a>
+                <a href="#contact" class="btn btn-outline" data-key="contact-me">Contato</a>
+              </div>
+              <div class="hero-metrics" aria-label="Indicadores de trabalho">
+                <div class="metric-card">
+                  <span class="metric-value">UI + Code</span>
+                  <span class="metric-label">Design com foco em conversão</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value">Performance</span>
+                  <span class="metric-label">Interfaces rápidas e fluidas</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value">Entrega</span>
+                  <span class="metric-label">Do layout ao deploy</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero-image">
+              <div class="profile-image-container">
+                <img src="assets/img/foto-perfil.png" alt="David Alves" class="profile-image">
+                <div class="image-decoration">
+                  <div class="deco-circle"></div>
+                  <div class="deco-square"></div>
+                  <div class="deco-line"></div>
+                  <div class="deco-glow"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="scroll-indicator" role="button" tabindex="0" aria-label="Descer para a secao Sobre">
+            <div class="mouse">
+              <div class="wheel"></div>
+            </div>
+            <div class="scroll-copy">
+              <span class="scroll-text" data-key="scroll-down">Role para baixo</span>
+              <span class="scroll-subtext">Desca e veja stack, projetos e contato</span>
+            </div>
+            <span class="scroll-arrow" aria-hidden="true"><i class="fas fa-arrow-down"></i></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section about-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle" data-key="about-subtitle">Conheça-me</span>
+            <h2 class="section-title" data-key="about-title">Sobre Mim</h2>
+          </div>
+          <div class="about-content">
+            <div class="about-image">
+              <img src="assets/img/foto-perfil.png" alt="David Alves" class="about-profile-image">
+              <div class="about-image-decoration">
+                <div class="code-snippet">
+                  <pre><code>{
+  name: "David Alves",
+  age: 20,
+  location: "Brasil",
+  occupation: "Fullstack Dev"
+}</code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="about-text">
+              <h3 class="about-greeting" data-key="about-greeting">Prazer em conhecê-lo!</h3>
+              <p class="about-description" data-key="about-description-1">
+                Desenvolvo produtos web pensando no que vem depois do clique.
+                Não só em fazer funcionar, mas em fazer durar.
+              </p>
+              <p class="about-description" data-key="about-description-2">
+                Minha jornada começou com aquela curiosidade de sempre: 'como isso funciona?'. Desde então, venho
+                dominando diferentes tecnologias e frameworks, e aprendendo que 'funciona na minha máquina' não é
+                argumento válido.
+              </p>
+              <p class="about-description" data-key="about-description-3">
+                Código limpo é economia de tempo, energia e dinheiro.
+                Entrego soluções claras, funcionais e pensadas para crescer junto com o produto.
+              </p>
+              <div class="about-info">
+                <div class="info-item">
+                  <span class="info-label" data-key="name-label">Nome:</span>
+                  <span class="info-value">David Alves</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label" data-key="age-label">Idade:</span>
+                  <span class="info-value">20</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label" data-key="education-label">Formação:</span>
+                  <span class="info-value" data-key="education-value">ADS - Unileya</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label" data-key="location-label">Localização:</span>
+                  <span class="info-value" data-key="location-value">Brasil</span>
+                </div>
+              </div>
+              <a href="#contact" class="btn btn-primary" data-key="lets-talk">Vamos Conversar</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="section skills-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle" data-key="skills-subtitle">Especialidades</span>
+            <h2 class="section-title" data-key="skills-title">Minhas Habilidades</h2>
+          </div>
+          <div class="skills-content">
+            <div class="skills-category">
+              <h3 class="category-title" data-key="frontend-title">Front-end</h3>
+              <div class="skills-grid">
+                <div class="skill-item" data-skill="HTML5">
+                  <div class="skill-icon">
+                    <i class="fab fa-html5"></i>
+                  </div>
+                  <span class="skill-name">HTML5</span>
+                </div>
+                <div class="skill-item" data-skill="CSS3">
+                  <div class="skill-icon">
+                    <i class="fab fa-css3-alt"></i>
+                  </div>
+                  <span class="skill-name">CSS3</span>
+                </div>
+                <div class="skill-item" data-skill="JavaScript">
+                  <div class="skill-icon">
+                    <i class="fab fa-js"></i>
+                  </div>
+                  <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="skill-item" data-skill="React">
+                  <div class="skill-icon">
+                    <i class="fab fa-react"></i>
+                  </div>
+                  <span class="skill-name">React</span>
+                </div>
+                <div class="skill-item" data-skill="Tailwind">
+                  <div class="skill-icon">
+                    <i class="fab fa-css3"></i>
+                  </div>
+                  <span class="skill-name">Tailwind</span>
+                </div>
+              </div>
+            </div>
+            <div class="skills-category">
+              <h3 class="category-title" data-key="backend-title">Back-end</h3>
+              <div class="skills-grid">
+                <div class="skill-item" data-skill="Node.js">
+                  <div class="skill-icon">
+                    <i class="fab fa-node-js"></i>
+                  </div>
+                  <span class="skill-name">Node.js</span>
+                </div>
+                <!-- <div class="skill-item" data-skill="Express">
+                  <div class="skill-icon">
+                    <i class="fab fa-node"></i>
+                  </div>
+                  <span class="skill-name">Express</span>
+                </div> -->
+                <div class="skill-item" data-skill="MongoDB">
+                  <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                  </div>
+                  <span class="skill-name">MongoDB</span>
+                </div>
+                <div class="skill-item" data-skill="SQL">
+                  <div class="skill-icon">
+                    <i class="fas fa-table"></i>
+                  </div>
+                  <span class="skill-name">SQL</span>
+                </div>
+              </div>
+            </div>
+            <div class="skills-category">
+              <h3 class="category-title" data-key="tools-title">Ferramentas</h3>
+              <div class="skills-grid">
+                <div class="skill-item" data-skill="Git">
+                  <div class="skill-icon">
+                    <i class="fab fa-git-alt"></i>
+                  </div>
+                  <span class="skill-name">Git</span>
+                </div>
+                <div class="skill-item" data-skill="GitHub">
+                  <div class="skill-icon">
+                    <i class="fab fa-github"></i>
+                  </div>
+                  <span class="skill-name">GitHub</span>
+                </div>
+                <div class="skill-item" data-skill="VS Code">
+                  <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <span class="skill-name">VS Code</span>
+                </div>
+                <div class="skill-item" data-skill="Figma">
+                  <div class="skill-icon">
+                    <i class="fab fa-figma"></i>
+                  </div>
+                  <span class="skill-name">Figma</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="section portfolio-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle" data-key="portfolio-subtitle">Trabalhos recentes</span>
+            <h2 class="section-title" data-key="portfolio-title">Meu Portfólio</h2>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-item">
+              <div class="portfolio-image">
+                <img src="assets/img/joana-fotografia.png" alt="Portfolio Joana Fotografia" class="project-image">
+                <div class="portfolio-overlay">
+                  <a href="#" class="portfolio-link" data-project="joana-fotografia">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <h3 class="portfolio-title" data-key="project1-title">Portfolio Joana Fotografia</h3>
+                <p class="portfolio-description" data-key="project1-description">
+                  Site elegante para uma fotógrafa de casamento, destacando seu trabalho com uma interface limpa e
+                  moderna.
+                </p>
+                <div class="portfolio-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Tailwind CSS</span>                </div>
+              </div>
+            </div>
+            <div class="portfolio-item">
+              <div class="portfolio-image">
+                <img src="assets/img/snitap.png" alt="LP Snitap" class="project-image">
+                <div class="portfolio-overlay">
+                  <a href="#" class="portfolio-link" data-project="techhelp">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <h3 class="portfolio-title" data-key="project2-title">LP Snitap Patins</h3>
+                <p class="portfolio-description" data-key="project2-description">
+                  Landing page moderna e responsiva para e-commerce de patins.
+                </p>
+                <div class="portfolio-tech">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-item">
+              <div class="portfolio-image">
+                <img src="assets/img/afiliadosBet.png" alt="Afiliados Bet" class="project-image">
+                <div class="portfolio-overlay">
+                  <a href="#" class="portfolio-link" data-project="afiliadosBet">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <h3 class="portfolio-title" data-key="project3-title">LP AfiliadosBet</h3>
+                <p class="portfolio-description" data-key="project3-description">
+                  Uma landing page moderna e responsiva para programa de afiliados de apostas, construída com React,
+                  TypeScript e Tailwind CSS.
+                </p>
+                <div class="portfolio-tech">
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Tailwind</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section contact-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle" data-key="contact-subtitle">Vamos conversar</span>
+            <h2 class="section-title" data-key="contact-title">Entre em Contato</h2>
+          </div>
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                  <h3 class="contact-title" data-key="email-title">Email</h3>
+                  <p class="contact-value">eaidavidalves@gmail.com</p>
+                  <button class="copy-btn" type="button" data-copy="eaidavidalves@gmail.com">
+                    <i class="fas fa-copy"></i>
+                    <span data-key="copy">Copiar</span>
+                  </button>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div class="contact-text">
+                  <h3 class="contact-title" data-key="github-title">GitHub</h3>
+                  <p class="contact-value">github.com/eaidavid</p>
+                  <a href="https://github.com/eaidavid" target="_blank" rel="noopener noreferrer" class="btn btn-small">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span data-key="visit">Visitar</span>
+                  </a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-text">
+                  <h3 class="contact-title" data-key="whatsapp-title">WhatsApp</h3>
+                  <p class="contact-value">(62) 99530-2425</p>
+                  <button class="copy-btn" type="button" data-copy="6299530-2425">
+                    <i class="fas fa-copy"></i>
+                    <span data-key="copy">Copiar</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="contact-cta-panel">
+              <span class="contact-cta-kicker">Canal direto</span>
+              <h3 class="contact-cta-title">Quer uma landing page ou site com visual premium?</h3>
+              <p class="contact-cta-description">
+                Me chama no WhatsApp e eu te respondo com direcionamento, prazo e melhor formato para o seu projeto.
+              </p>
+              <a href="https://wa.me/5562995302425?text=Ol%C3%A1%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20desejo%20fazer%20um%20or%C3%A7amento.%0A%0AMeu%20nome%20%C3%A9%20"
+                class="btn btn-primary contact-main-cta" target="_blank" rel="noopener noreferrer">Fazer Orçamento</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span class="logo-text">DA<span class="accent">.</span></span>
+          </div>
+          <div class="footer-social">
+            <a href="https://github.com/eaidavid" target="_blank" rel="noopener noreferrer" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="http://linkedin.com/in/david-alves-477654225" target="_blank" rel="noopener noreferrer"
+              class="social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+          <div class="footer-copyright">
+            <p>&copy; <span class="current-year">2023</span> <span data-key="copyright">David Alves. Todos os direitos
+                reservados.</span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="cursor-trail"></div>
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/security.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/design.tools.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/particles.js"></script>
+  </div>
+</body>
+
+</html>

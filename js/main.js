@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Easter Egg - Console Message
   console.log(
     '%cHello fellow developer! 👋', 
-    'font-size: 20px; font-weight: bold; color: #58a6ff;'
+    'font-size: 20px; font-weight: bold; color: #20e48d;'
   );
   console.log(
     '%cYou found an easter egg! Feel free to explore the code.', 
@@ -46,13 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log(
     '%cType %crevealSecret()%c to see something cool.',
     'font-size: 14px; color: #c9d1d9;',
-    'font-size: 14px; color: #58a6ff; font-weight: bold;',
+    'font-size: 14px; color: #20e48d; font-weight: bold;',
     'font-size: 14px; color: #c9d1d9;'
   );
   
   // Add Easter Egg function to window
   window.revealSecret = function() {
-    console.log('%c✨ Congratulations! ✨', 'font-size: 24px; font-weight: bold; color: #58a6ff;');
+    console.log('%c✨ Congratulations! ✨', 'font-size: 24px; font-weight: bold; color: #20e48d;');
     console.log('%cYou found the secret message!', 'font-size: 16px; color: #c9d1d9;');
     console.log('%cHere\'s a digital high five! 🖐️', 'font-size: 16px; color: #c9d1d9;');
     
@@ -511,7 +511,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 function activateKonamiCode() {
-  console.log('%c⭐️ KONAMI CODE ACTIVATED! ⭐️', 'font-size: 24px; font-weight: bold; color: #58a6ff;');
+  console.log('%c⭐️ KONAMI CODE ACTIVATED! ⭐️', 'font-size: 24px; font-weight: bold; color: #20e48d;');
   
   // Add a fun effect
   document.body.classList.add('konami-activated');

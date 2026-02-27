@@ -2,24 +2,39 @@
 const translations = {
   'pt-BR': {
     // Navigation
+    'links': 'Links',
+    'dev': 'Dev',
+    'design': 'Design',
     'home': 'Início',
     'about': 'Sobre',
     'skills': 'Habilidades',
+    'services': 'Serviços',
     'portfolio': 'Projetos',
+    'cases': 'Cases',
     'contact': 'Contato',
     
     // Hero Section
     'greeting': 'Olá, eu sou',
     'developer-title': 'Desenvolvedor Fullstack',
+    'designer-title': 'Designer Gráfico',
+    'design-availability': 'Disponível para projetos e freelas',
     'hero-description': 'Transformando ideias em soluções digitais modernas e eficientes. Apaixonado por código limpo e experiências de usuário intuitivas.',
     'view-projects': 'Ver Projetos',
+    'view-cases': 'Ver Cases',
+    'view-dev-portfolio': 'Portfólio Dev',
     'contact-me': 'Contato',
     'scroll-down': 'Role para baixo',
+    'design-scroll-subtext': 'Desça e veja serviços, cases e contato',
+    'design-hero-description': 'Crio identidade visual e peças premium para social e web — com consistência, direção de arte e atenção a detalhes.',
     
     // About Section
     'about-subtitle': 'Conheça-me',
     'about-title': 'Sobre Mim',
     'about-greeting': 'Prazer em conhecê-lo!',
+    'design-about-greeting': 'Prazer! Bora criar algo premium.',
+    'design-about-description-1': 'Eu crio layouts e peças que parecem caras: tipografia, grid e direção de arte com consistência.',
+    'design-about-description-2': 'Do conceito ao arquivo final, entrego variações por formato e versões prontas para social e web.',
+    'design-about-description-3': 'Consistência é velocidade: eu gosto de deixar a marca organizada com kit de templates e padrões.',
     'about-description-1': 'Tenho 19 anos e sou um desenvolvedor fullstack apaixonado por criar aplicações web modernas e funcionais. Atualmente, estou cursando Análise e Desenvolvimento de Sistemas na Unileya.',
     'about-description-2': 'Minha jornada na programação começou com uma curiosidade sobre como as coisas funcionam na web, e desde então venho aprimorando minhas habilidades em diferentes tecnologias e frameworks.',
     'about-description-3': 'Acredito que o código limpo e a atenção aos detalhes são fundamentais para criar experiências digitais excepcionais. Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades existentes.',
@@ -29,6 +44,10 @@ const translations = {
     'education-value': 'ADS - Unileya',
     'location-label': 'Localização:',
     'location-value': 'Brasil',
+    'focus-label': 'Foco:',
+    'focus-value': 'Design Gráfico & Identidade Visual',
+    'tools-label': 'Ferramentas:',
+    'tools-value': 'Illustrator • Photoshop • After Effects',
     'lets-talk': 'Vamos Conversar',
     
     // Skills Section
@@ -37,6 +56,28 @@ const translations = {
     'frontend-title': 'Front-end',
     'backend-title': 'Back-end',
     'tools-title': 'Ferramentas',
+
+    // Services Section (Design)
+    'services-subtitle': 'Especialidades',
+    'services-title': 'Serviços de Design',
+    'service-product-title': 'Design Gráfico',
+    'service-product-desc': 'Peças e layouts premium para social, campanhas e materiais digitais.',
+    'service-product-item1': 'Artes para social (post/stories)',
+    'service-product-item2': 'Criativos para anúncios e campanhas',
+    'service-product-item3': 'Apresentações, banners e materiais',
+    'service-product-item4': 'Variações por formato e versão',
+    'service-visual-title': 'Identidade Visual',
+    'service-visual-desc': 'Marca consistente com guia simples e kit de templates para ganhar velocidade.',
+    'service-visual-item1': 'Logo + variações e aplicações',
+    'service-visual-item2': 'Paleta, tipografia e padrões',
+    'service-visual-item3': 'Manual rápido e assets',
+    'service-visual-item4': 'Templates para social e web',
+    'service-motion-title': 'Motion Design',
+    'service-motion-desc': 'Animações curtas e modernas para elevar o visual e aumentar retenção.',
+    'service-motion-item1': 'Reels/Stories animados',
+    'service-motion-item2': 'Transições e efeitos sutis',
+    'service-motion-item3': 'Animações de marca (logo)',
+    'service-motion-item4': 'Export otimizado (MP4/GIF/Lottie)',
     
     // Portfolio Section
     'portfolio-subtitle': 'Trabalhos recentes',
@@ -47,12 +88,24 @@ const translations = {
     'project2-description': 'Sistema interno de automação para uma loja de reparo técnico, otimizando o fluxo de trabalho.',
     'project3-title': 'Sistema de Estoque MasterTech',
     'project3-description': 'Sistema de gerenciamento de estoque com painel administrativo completo para controle de inventário.',
+
+    // Cases Section (Design)
+    'cases-subtitle': 'Trabalhos recentes',
+    'cases-title': 'Cases em Destaque',
+
+    // Highlights + Gallery (Design)
+    'highlights-subtitle': 'Seleção premium',
+    'highlights-title': 'Destaques',
+    'gallery-subtitle': 'Posts e artes',
+    'gallery-title': 'Galeria',
+    'gallery-empty': 'Adicione imagens na pasta posts-design para ver o carrossel aqui.',
     
     // Contact Section
     'contact-subtitle': 'Vamos conversar',
     'contact-title': 'Entre em Contato',
     'email-title': 'Email',
     'github-title': 'GitHub',
+    'linkedin-title': 'LinkedIn',
     'whatsapp-title': 'WhatsApp',
     'copy': 'Copiar',
     'copied': 'Copiado!',
@@ -81,24 +134,39 @@ const translations = {
   },
   'en-US': {
     // Navigation
+    'links': 'Links',
+    'dev': 'Dev',
+    'design': 'Design',
     'home': 'Home',
     'about': 'About',
     'skills': 'Skills',
+    'services': 'Services',
     'portfolio': 'Projects',
+    'cases': 'Cases',
     'contact': 'Contact',
     
     // Hero Section
     'greeting': 'Hello, I am',
     'developer-title': 'Fullstack Developer',
+    'designer-title': 'Graphic Designer',
+    'design-availability': 'Available for projects and freelance',
     'hero-description': 'Transforming ideas into modern and efficient digital solutions. Passionate about clean code and intuitive user experiences.',
     'view-projects': 'View Projects',
+    'view-cases': 'View Cases',
+    'view-dev-portfolio': 'Dev Portfolio',
     'contact-me': 'Contact Me',
     'scroll-down': 'Scroll down',
+    'design-scroll-subtext': 'Scroll for services, cases and contact',
+    'design-hero-description': 'I create brand identity and premium visuals for social and web — with consistency, art direction, and attention to detail.',
     
     // About Section
     'about-subtitle': 'Get to know me',
     'about-title': 'About Me',
     'about-greeting': 'Nice to meet you!',
+    'design-about-greeting': "Nice to meet you — let's build something premium.",
+    'design-about-description-1': 'I craft layouts and visuals that feel premium: typography, grid, and consistent art direction.',
+    'design-about-description-2': 'From concept to final files, I deliver format variations and ready-to-post versions for social and web.',
+    'design-about-description-3': 'Consistency equals speed: I organize the brand with templates and clear patterns.',
     'about-description-1': "I'm 19 years old and a fullstack developer passionate about creating modern and functional web applications. Currently, I'm studying Systems Analysis and Development at Unileya.",
     'about-description-2': 'My programming journey began with curiosity about how things work on the web, and since then I have been improving my skills in different technologies and frameworks.',
     'about-description-3': 'I believe that clean code and attention to detail are fundamental to creating exceptional digital experiences. I am always looking to learn new technologies and improve my existing skills.',
@@ -108,6 +176,10 @@ const translations = {
     'education-value': 'SysDev - Unileya',
     'location-label': 'Location:',
     'location-value': 'Brazil',
+    'focus-label': 'Focus:',
+    'focus-value': 'Graphic Design & Visual Identity',
+    'tools-label': 'Tools:',
+    'tools-value': 'Illustrator • Photoshop • After Effects',
     'lets-talk': "Let's Talk",
     
     // Skills Section
@@ -116,6 +188,28 @@ const translations = {
     'frontend-title': 'Front-end',
     'backend-title': 'Back-end',
     'tools-title': 'Tools',
+
+    // Services Section (Design)
+    'services-subtitle': 'Specialties',
+    'services-title': 'Design Services',
+    'service-product-title': 'Graphic Design',
+    'service-product-desc': 'Premium visuals for social, campaigns, and digital materials.',
+    'service-product-item1': 'Social visuals (posts/stories)',
+    'service-product-item2': 'Ads and campaign creatives',
+    'service-product-item3': 'Slides, banners, and assets',
+    'service-product-item4': 'Format variations and exports',
+    'service-visual-title': 'Visual Identity',
+    'service-visual-desc': 'Consistent brand with a simple guide and a template kit for speed.',
+    'service-visual-item1': 'Logo + variations and applications',
+    'service-visual-item2': 'Palette, typography, and patterns',
+    'service-visual-item3': 'Quick brand guide and assets',
+    'service-visual-item4': 'Templates for social and web',
+    'service-motion-title': 'Motion Design',
+    'service-motion-desc': 'Short, modern animations to elevate visuals and increase retention.',
+    'service-motion-item1': 'Animated reels/stories',
+    'service-motion-item2': 'Transitions and subtle effects',
+    'service-motion-item3': 'Brand animations (logo)',
+    'service-motion-item4': 'Optimized exports (MP4/GIF/Lottie)',
     
     // Portfolio Section
     'portfolio-subtitle': 'Recent work',
@@ -126,12 +220,24 @@ const translations = {
     'project2-description': 'Internal automation system for a technical repair shop, optimizing workflow.',
     'project3-title': 'MasterTech Inventory System',
     'project3-description': 'Stock management system with a complete admin panel for inventory control.',
+
+    // Cases Section (Design)
+    'cases-subtitle': 'Recent work',
+    'cases-title': 'Featured Cases',
+
+    // Highlights + Gallery (Design)
+    'highlights-subtitle': 'Premium picks',
+    'highlights-title': 'Highlights',
+    'gallery-subtitle': 'Posts & visuals',
+    'gallery-title': 'Gallery',
+    'gallery-empty': 'Add images to the posts-design folder to see the carousel here.',
     
     // Contact Section
     'contact-subtitle': "Let's talk",
     'contact-title': 'Get In Touch',
     'email-title': 'Email',
     'github-title': 'GitHub',
+    'linkedin-title': 'LinkedIn',
     'whatsapp-title': 'WhatsApp',
     'copy': 'Copy',
     'copied': 'Copied!',

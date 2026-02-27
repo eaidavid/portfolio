@@ -5,8 +5,8 @@
   --dark-bg-secondary: #161b22;
   --dark-text-primary: #f0f6fc;
   --dark-text-secondary: #c9d1d9;
-  --dark-accent-primary: #58a6ff;
-  --dark-accent-secondary: #1f6feb;
+  --dark-accent-primary: #20e48d;
+  --dark-accent-secondary: #12bf74;
   --dark-border: #30363d;
   --dark-card-bg: rgba(22, 27, 34, 0.8);
 
@@ -15,8 +15,8 @@
   --light-bg-secondary: #f1f5f9;
   --light-text-primary: #1e293b;
   --light-text-secondary: #475569;
-  --light-accent-primary: #0284c7;
-  --light-accent-secondary: #0369a1;
+  --light-accent-primary: #0da75f;
+  --light-accent-secondary: #09864c;
   --light-border: #cbd5e1;
   --light-card-bg: rgba(255, 255, 255, 0.85);
 
@@ -138,6 +138,9 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
 }
 
 /* Page Wrapper */
@@ -165,7 +168,7 @@ img {
   width: 100%;
   height: 100%;
   opacity: 0.03;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="10" y="20" font-family="monospace" font-size="10" fill="%2358a6ff">{</text><text x="20" y="40" font-family="monospace" font-size="10" fill="%2358a6ff">code: true,</text><text x="20" y="60" font-family="monospace" font-size="10" fill="%2358a6ff">dev: true</text><text x="10" y="80" font-family="monospace" font-size="10" fill="%2358a6ff">}</text></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="10" y="20" font-family="monospace" font-size="10" fill="%2320e48d">{</text><text x="20" y="40" font-family="monospace" font-size="10" fill="%2320e48d">code: true,</text><text x="20" y="60" font-family="monospace" font-size="10" fill="%2320e48d">dev: true</text><text x="10" y="80" font-family="monospace" font-size="10" fill="%2320e48d">}</text></svg>');
 }
 
 .gradient-overlay {
@@ -1341,6 +1344,17 @@ img {
   --ring-strong: rgba(13, 167, 95, 0.24);
 }
 
+/* Glow + Partículas */
+:root {
+  --glow-strength: 0.7;
+  --particle-opacity: 0.22;
+}
+
+body.glow-low {
+  --glow-strength: 0.65;
+  --particle-opacity: 0.18;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
@@ -1348,8 +1362,8 @@ html {
 
 body {
   background:
-    radial-gradient(60vw 45vw at 88% 8%, rgba(var(--accent-primary-rgb), 0.15), transparent 60%),
-    radial-gradient(52vw 36vw at 8% 24%, rgba(var(--accent-secondary-rgb), 0.1), transparent 62%),
+    radial-gradient(60vw 45vw at 88% 8%, rgba(var(--accent-primary-rgb), calc(0.15 * var(--glow-strength, 1))), transparent 60%),
+    radial-gradient(52vw 36vw at 8% 24%, rgba(var(--accent-secondary-rgb), calc(0.1 * var(--glow-strength, 1))), transparent 62%),
     linear-gradient(180deg, rgba(var(--bg-secondary-rgb), 0.25), transparent 28%),
     var(--bg-primary);
   color: var(--text-primary);
@@ -1375,9 +1389,9 @@ body::before {
 
 body::after {
   background:
-    radial-gradient(22rem 22rem at 15% 80%, rgba(var(--accent-primary-rgb), 0.08), transparent 70%),
-    radial-gradient(18rem 18rem at 85% 30%, rgba(var(--accent-primary-rgb), 0.07), transparent 70%);
-  filter: blur(10px);
+    radial-gradient(22rem 22rem at 15% 80%, rgba(var(--accent-primary-rgb), calc(0.08 * var(--glow-strength, 1))), transparent 70%),
+    radial-gradient(18rem 18rem at 85% 30%, rgba(var(--accent-primary-rgb), calc(0.07 * var(--glow-strength, 1))), transparent 70%);
+  filter: blur(calc(10px * var(--glow-strength, 1)));
   z-index: -1;
 }
 
@@ -1394,16 +1408,45 @@ body.menu-open {
 }
 
 .code-background {
-  opacity: 0.05;
+  opacity: calc(0.05 * var(--glow-strength, 1));
   background-size: 160px 160px;
   animation: codeDrift 42s linear infinite;
+  z-index: 0;
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bg-particle {
+  position: absolute;
+  width: var(--size, 3px);
+  height: var(--size, 3px);
+  border-radius: 999px;
+  background: rgba(var(--text-primary-rgb, 238, 248, 241), var(--particle-opacity, 0.22));
+  opacity: var(--alpha, 0.7);
+  filter: blur(0.2px);
+  transform: translate3d(0, 0, 0);
+  animation: particleFloat var(--dur, 10s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  will-change: transform;
+}
+
+@keyframes particleFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(var(--dx, 12px), var(--dy, -18px), 0); }
 }
 
 .gradient-overlay {
   background:
-    radial-gradient(circle at 84% 12%, rgba(var(--accent-primary-rgb), 0.18), transparent 38%),
-    radial-gradient(circle at 14% 75%, rgba(var(--accent-secondary-rgb), 0.12), transparent 46%),
-    radial-gradient(circle at 42% 100%, rgba(var(--accent-primary-rgb), 0.06), transparent 54%);
+    radial-gradient(circle at 84% 12%, rgba(var(--accent-primary-rgb), calc(0.18 * var(--glow-strength, 1))), transparent 38%),
+    radial-gradient(circle at 14% 75%, rgba(var(--accent-secondary-rgb), calc(0.12 * var(--glow-strength, 1))), transparent 46%),
+    radial-gradient(circle at 42% 100%, rgba(var(--accent-primary-rgb), calc(0.06 * var(--glow-strength, 1))), transparent 54%);
+  z-index: 2;
 }
 
 @keyframes codeDrift {
@@ -1892,7 +1935,7 @@ body.menu-open {
   border-radius: 999px;
   background: radial-gradient(circle, rgba(var(--accent-primary-rgb), 0.36), rgba(var(--accent-primary-rgb), 0));
   filter: blur(18px);
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 @keyframes slowFloat {
@@ -2186,6 +2229,45 @@ body.menu-open {
   background-color: rgba(var(--accent-primary-rgb), 0.07);
   border: 1px solid rgba(var(--accent-primary-rgb), 0.14);
   color: color-mix(in srgb, var(--accent-primary) 88%, white 12%);
+}
+
+.tool-with-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+}
+
+.tool-pill-logo {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--bg-primary-rgb), 0.52);
+  border: 1px solid rgba(var(--text-primary-rgb), 0.09);
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.tool-pill-logo i {
+  font-size: 0.78rem;
+  color: rgba(var(--text-primary-rgb), 0.93);
+}
+
+.tool-pill-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.tool-pill-label {
+  line-height: 1;
+}
+
+.tech-tag.tool-with-logo {
+  padding-right: 0.62rem;
 }
 
 .contact-content {
